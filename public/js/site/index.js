@@ -11,7 +11,17 @@ function expandCards() {
 			$(this).click(function () {
 				console.log("clicked");
 				console.log($grid);
-				$(this).parent().toggleClass("grid-item--expand");
+
+				if ($(this).parent().hasClass("grid-item--expand") == false) {
+					$(".grid-item--expand").removeClass("grid-item--expand");
+					$(this).parent().toggleClass("grid-item--expand");
+				}
+				else {
+					$(this).parent().toggleClass("grid-item--expand");
+				}
+
+
+
 				$grid.masonry();
 			});
 		} else {
